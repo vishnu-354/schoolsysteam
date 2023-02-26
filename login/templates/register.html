@@ -1,0 +1,97 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Multiple user login</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+
+<body>
+  <div class="row">
+    <div class="form">
+      <h1>User Registration page</h1><br>
+      <div>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group btn btn-pill text-white btn-block btn-primary">
+            <label style="width:60px;" for="username">Username</label>
+            {{ form.username }}
+          </div>
+          <div class="form-group first">
+            <label for="email">Email</label>
+            {{ form.email}}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="password">Password</label>
+            {{ form.password1 }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="password">confirm Password</label>
+            {{ form.password2 }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="orgname">organisation name</label>
+            {{ form.orgname }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="instname">Institution name</label>
+            {{ form.instname }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="principal">Principal</label>
+            {{ form.principal }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="teacher">Teacher</label>
+            {{ form.teacher }}
+          </div>
+          <div class="form-group last mb-4">
+            <label for="student">Student</label>
+            {{ form.student }}
+          </div>
+          <div class="user-types">
+            <div class="d-flex mb-5 align-items-center check">
+              <label class="control control--checkbox mb-0"><span class="caption">Student</span>
+                {{ form.is_student }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center check">
+              <label class="control control--checkbox mb-0"><span class="caption">Teacher</span>
+                {{ form.is_teacher }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center check">
+              <label class="control control--checkbox mb-0"><span class="caption">Principal</span>
+                {{ form.is_principal }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center check">
+              <label class="control control--checkbox mb-0"><span class="caption">ins Admin</span>
+                {{ form.is_institutionadmin }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center check">
+              <label class="control control--checkbox mb-0"><span class="caption">org Admin</span>
+                {{ form.is_organisationadmin }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+          </div>
+
+          <span class="text-error">{{ form.errors }}</span>
+          <input type="submit" value="Register" class="submit btn btn-pill text-white btn-block btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

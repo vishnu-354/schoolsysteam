@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Organisation Admin</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<hi>welcome  organisation admin </hi>
+    <table>
+        <thead>
+            <tr>
+                <td>Organisation </td>
+                <td>Institution </td>
+                <td>Principal</td>
+                <td>Teacher</td>
+                <td>Student</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>{{d.orgname}}</td>
+                <td>{{d.instname}}</td>
+                <td>{{d.principal}}</td>
+                <td>{{d.teacher}}</td>
+                <td>{{d.student}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

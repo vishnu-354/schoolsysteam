@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px solid black;
+            padding: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+<hi>welcome  teacher </hi>
+<table>
+    <thead>
+    <tr>
+        <td>Students</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in data %}
+    <tr>
+        <td>{{d.student}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+</body>
+</html>

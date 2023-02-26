@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_box">
+            <h1 >Teach-Ease</h1>
+            <center><h4>Quick to <i>Teach</i>; Easy to Learn</h4></center><br>
+                <form  method="post">
+                    {% csrf_token %}
+<!--                  <div>-->
+<!--                      <label for="username">Category</label>-->
+<!--                      <select name="users" id="users" required>-->
+<!--                    <option value="">Select user type</option>-->
+<!--                    <option value="{{form.Is_oranisationadmin}}">Organization admin</option>-->
+<!--                    <option value="Institution admin">Institution admin</option>-->
+<!--                    <option value="Principal">Principal</option>-->
+<!--                    <option value="Teacher">Teacher</option>-->
+<!--                    <option value="{{ form.Is_student }}">{{ form.Is}}</option>-->
+<!--                </select>-->
+<!--                  </div>-->
+
+
+                  <div class="form-group first" >
+                    <label for="username" >Username</label>
+                      {{ form.username }}
+                  </div>
+                  <div class="form-group last mb-5">
+                    <label for="username">Password</label>
+                    {{ form.password }}
+                  </div>
+                    <div>
+                    <input type="checkbox" id="remember" name="remember" value="remember">
+                    <label for="remember"> Remind me</label><br>
+                </div>
+                <div>
+                    <input type="checkbox" id="terms" name="terms" value="terms">
+                    <label for="terms"> I agree the <a>Terms & Conditions and Privacy Policy</a></label><br>
+                </div>
+                <input type="submit" value="Login" class="login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
